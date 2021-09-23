@@ -62,25 +62,25 @@ handleSubmission = (location) => {
 
 handleSunConverter = (unix, zone) => {
 
-var d = new Date(unix * 1000)
-var localTime = d.getTime()
-var localOffset = d.getTimezoneOffset() * 60000
-var utc = localTime + localOffset
-var city = utc + (1000 * zone)
-var date = new Date(city)
+const d = new Date(unix * 1000)
+const localTime = d.getTime()
+const localOffset = d.getTimezoneOffset() * 60000
+const utc = localTime + localOffset
+const city = utc + (1000 * zone)
+const date = new Date(city)
 // console.log(nd)
   // Create a new JavaScript Date object based on the timestamp
   // multiplied by 1000 so that the argument is in milliseconds, not seconds.
-  // var date = new Date((unix * 1000));
+  // const date = new Date((unix * 1000));
   // Hours part from the timestamp
-  var hours = date.getHours();
+  const hours = date.getHours();
   // Minutes part from the timestamp
-  var minutes = "0" + date.getMinutes();
+  const minutes = "0" + date.getMinutes();
   // Seconds part from the timestamp
-  var seconds = "0" + date.getSeconds();
+  const seconds = "0" + date.getSeconds();
   
   // Will display time in 10:30:23 format
-  var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+  const formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
   
   return formattedTime
 }
